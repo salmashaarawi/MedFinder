@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'api_service.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,12 +15,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MedicationSearchPage(),
+      home: const MedicationSearchPage(),
     );
   }
 }
 
 class MedicationSearchPage extends StatefulWidget {
+  const MedicationSearchPage({super.key});
+
   @override
   _MedicationSearchPageState createState() => _MedicationSearchPageState();
 }
@@ -43,7 +47,7 @@ class _MedicationSearchPageState extends State<MedicationSearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Medication Search'),
+        title: const Text('Medication Search'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -53,16 +57,16 @@ class _MedicationSearchPageState extends State<MedicationSearchPage> {
               onChanged: (value) {
                 query = value;
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Search medication',
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: searchMedication,
-              child: Text('Search'),
+              child: const Text('Search'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             if (medicationData != null)
               Text(
                 'Medication Data: ${medicationData.toString()}',
