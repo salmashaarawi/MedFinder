@@ -1,6 +1,6 @@
 # medication_search_app
 
-Change 1 to the file 
+
 
 A new Flutter project.
 
